@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./assets/logo.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="A Progressive MIPS Simulator" />
+    <link rel="apple-touch-icon" href="./assets/logo.jpg" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+    
+    <link rel="manifest" href="./manifest.json" />
+    
+    <title>MIPS Simulator</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+        background: #e0e0e0;
+      }
+
+      .toolbar {
+        background: #6a1b9a;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        font-size: 1.2em;
+      }
+
+      #root {
+        padding: 20px;
+      }
+
+      .button {
+        background: linear-gradient(45deg, #1e88e5, #0d47a1); /* New colors */
+        border: none;
+        border-radius: 50px;
+        color: white;
+        padding: 10px 20px;
+        font-size: 1em;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .button:hover {
+        background: linear-gradient(45deg, #1e88e5, #01579b); /* New colors */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="toolbar">MIPS Simulator</div>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+     
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./serviceworker.js')
+            .then(reg => console.log('Success: ', reg.scope))
+            .catch(err => console.log('Error: ', err));
+        });
+      }
+    </script>
+  </body>
+</html>
